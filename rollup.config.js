@@ -1,8 +1,9 @@
 import vue from 'rollup-plugin-vue'
 import buble from '@rollup/plugin-buble'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import PostCSS from 'rollup-plugin-postcss'
 
 export default [
   {
@@ -13,7 +14,7 @@ export default [
     },
     external: ['vue'],
     plugins: [
-      resolve(),
+      nodeResolve(),
       commonjs(),
       vue({
         template: {
@@ -22,7 +23,8 @@ export default [
         compileTemplate: true,
         css: true
       }),
-      buble(),
+      PostCSS(),
+      buble({ objectAssign: 'Object.assign' }),
       terser()
     ]
   },
@@ -38,13 +40,14 @@ export default [
     },
     external: ['vue'],
     plugins: [
-      resolve(),
+      nodeResolve(),
       commonjs(),
       vue({
         compileTemplate: true,
         css: true
       }),
-      buble(),
+      PostCSS(),
+      buble({ objectAssign: 'Object.assign' }),
       terser()
     ]
   }

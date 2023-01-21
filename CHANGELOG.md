@@ -1,3 +1,6 @@
+5.0.0
+* Changes for Vue 3.
+
 4.5.0
 * Adjust npm output.
 

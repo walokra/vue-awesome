@@ -15,6 +15,7 @@ function randomIcon () {
 }
 
 export default {
+  // eslint-disable-next-line vue/component-definition-name-casing
   name: 'random-icon',
   components: {
     VIcon
@@ -39,6 +40,7 @@ export default {
       this.name = randomIcon()
     },
     toggle: function () {
+      // eslint-disable-next-line vue/no-mutating-props
       this.playing = !this.playing
     }
   }

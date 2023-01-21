@@ -1,4 +1,6 @@
 <script>
+import { h } from 'vue'
+
 let icons = {}
 
 function warn (msg, vm) {
@@ -12,6 +14,7 @@ function warn (msg, vm) {
 }
 
 export default {
+  // eslint-disable-next-line vue/component-definition-name-casing
   name: 'fa-icon',
   props: {
     name: {
@@ -71,13 +74,14 @@ export default {
         'fa-pulse': this.pulse
       }
 
-      if (this.classes) {
-        Object.keys(this.classes).forEach(c => {
-          if (this.classes[c]) {
-            classes[c] = true
-          }
-        })
-      }
+      // appariently this is no longer accessable because it classes is not defined on the instance
+      // if (this.classes) {
+      //   Object.keys(this.classes).forEach(c => {
+      //     if (this.classes[c]) {
+      //       classes[c] = true
+      //     }
+      //   })
+      // }
 
       return classes
     },
@@ -172,7 +176,8 @@ export default {
   },
   methods: {
     updateStack () {
-      if (!this.name && this.name !== null && this.$children.length === 0) {
+      const children = this.$slots && this.$slots.default ? this.$slots.default().filter(child => child.type.name.includes('fa-icon')) : []
+      if (!this.name && this.name !== null && children.length === 0) {
         warn(`Invalid prop: prop "name" is required.`, this)
         return
       }
@@ -183,7 +188,7 @@ export default {
 
       let width = 0
       let height = 0
-      this.$children.forEach(child => {
+      children.forEach(child => {
         child.outerScale = this.normalizedScale
 
         width = Math.max(width, child.width)
@@ -191,33 +196,30 @@ export default {
       })
       this.childrenWidth = width
       this.childrenHeight = height
-      this.$children.forEach(child => {
+      children.forEach(child => {
         child.x = (width - child.width) / 2
         child.y = (height - child.height) / 2
       })
     }
   },
-  render (h) {
+  render () {
     if (this.name === null) {
       return h()
     }
 
     let options = {
-      class: this.klass,
-      style: this.style,
-      attrs: {
-        role: this.$attrs.role || (this.label || this.title ? 'img' : null),
-        'aria-label': this.label || null,
-        'aria-hidden': !(this.label || this.title),
-        tabindex: this.tabindex,
-        x: this.x,
-        y: this.y,
-        width: this.width,
-        height: this.height,
-        viewBox: this.box,
-        focusable: this.focusable
-      },
-      on: this.$listeners
+      class: [this.klass],
+      style: [this.style],
+      role: this.$attrs.role || (this.label || this.title ? 'img' : null),
+      'aria-label': this.label || null,
+      'aria-hidden': !(this.label || this.title),
+      tabindex: this.tabindex,
+      x: this.x === false ? undefined : this.x,
+      y: this.y === false ? undefined : this.y,
+      width: this.width,
+      height: this.height,
+      viewBox: this.box,
+      focusable: this.focusable
     }
 
     if (this.raw) {
@@ -245,13 +247,13 @@ export default {
                   ? [
                     ...this.icon.paths.map((path, i) =>
                       h('path', {
-                        attrs: path,
+                        ...path,
                         key: `path-${i}`
                       })
                     ),
                     ...this.icon.polygons.map((polygon, i) =>
                       h('polygon', {
-                        attrs: polygon,
+                        ...polygon,
                         key: `polygon-${i}`
                       })
                     )

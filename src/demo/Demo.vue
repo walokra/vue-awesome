@@ -1,5 +1,5 @@
 <template>
-<main>
+<div id="app">
   <figure
     id="logo"
     @mouseenter="toggle"
@@ -150,7 +150,7 @@
     ·
     <a href="//github.com/Justineo/vue-awesome">View on GitHub</a>
   </footer>
-</main>
+</div>
 </template>
 
 <script>
@@ -159,6 +159,7 @@ import RandomIcon from './RandomIcon'
 import '../icons'
 
 export default {
+  // eslint-disable-next-line vue/component-definition-name-casing, vue/multi-word-component-names
   name: 'demo',
   components: {
     VIcon,

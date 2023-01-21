@@ -38,6 +38,9 @@ node_modules
 # Assets
 assets
 
-dist
-icons
-src/components/Icon.js
+# Using this library as git branch with published content
+# dist
+# icons
+# src/components/Icon.js
+
+package-lock.json

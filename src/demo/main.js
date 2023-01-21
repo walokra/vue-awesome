@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import Demo from './Demo.vue'
 import VIcon from '../components/Icon.vue'
 
@@ -56,12 +56,4 @@ VIcon.register({
   }
 })
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  name: 'app',
-  components: {
-    demo: Demo
-  },
-  render: h => h(Demo)
-})
+createApp(Demo).mount('#app')
