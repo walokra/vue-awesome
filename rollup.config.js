@@ -32,7 +32,7 @@ export default [
     input: 'src/index.js',
     output: {
       file: 'dist/vue-awesome.js',
-      name: 'VueAwesome',
+      name: 'VueAwesomeV3',
       format: 'umd',
       globals: {
         vue: 'Vue'

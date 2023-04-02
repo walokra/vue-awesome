@@ -1,5 +1,5 @@
 {
-  "name": "vue-awesome",
+  "name": "vue-awesome-v3",
   "version": "5.0.0",
   "description": "Font Awesome component for Vue.js, using inline SVG.",
   "author": "Marko Wallin <marko.wallin@iki.fi>",
@@ -73,6 +73,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/walokra/vue-awesome.git"
+    "url": "git+ssh://git@github.com/walokra/vue-awesome-v3.git"
   }
 }

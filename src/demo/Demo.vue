@@ -11,14 +11,14 @@
       :playing="playing"
     />
   </figure>
-  <h1><a href="https://github.com/Justineo/vue-awesome">Vue-Awesome</a></h1>
+  <h1><a href="https://github.com/walokra/vue-awesome-v3">Vue-Awesome-v3</a></h1>
   <p class="desc">
     Awesome SVG icon component for Vue.js, with built-in Font Awesome icons.
   </p>
   <p class="links">
-    <a href="https://www.npmjs.com/package/vue-awesome">npm</a>
+    <a href="https://www.npmjs.com/package/vue-awesome-v3">npm</a>
     ·
-    <a href="https://github.com/Justineo/vue-awesome#vue-awesome">docs</a>
+    <a href="https://github.com/walokra/vue-awesome-v3#vue-awesome-v3">docs</a>
     ·
     <a href="https://fontawesome.com/icons?m=free">search</a>
   </p>
@@ -136,19 +136,19 @@
   <p>
     See
     <a
-      href="https://github.com/Justineo/vue-awesome#more-advanced-cases"
+      href="https://github.com/walokra/vue-awesome-v3#more-advanced-cases"
     >readme</a>
     for more advanced usage.
   </p>
 
   <footer>
-    <a href="//github.com/Justineo">@Justineo</a>
+    <a href="//github.com/walokra">@walokra</a>
     ·
     <a
-      href="//github.com/Justineo/vue-awesome/blob/master/LICENSE"
+      href="//github.com/walokra/vue-awesome-v3/blob/master/LICENSE"
     >MIT License</a>
     ·
-    <a href="//github.com/Justineo/vue-awesome">View on GitHub</a>
+    <a href="//github.com/walokra/vue-awesome-v3">View on GitHub</a>
   </footer>
 </div>
 </template>

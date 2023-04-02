@@ -1,4 +1,4 @@
-# vue-awesome
+# vue-awesome-v3
 
 Awesome SVG icon component for Vue.js, with built-in Font Awesome icons.
 
@@ -6,14 +6,14 @@ Forked from [https://github.com/Justineo/vue-awesome](Justineo/vue-awesome) and 
 
 Vue-Awesome an SVG icon component for [Vue.js](https://vuejs.org/), with built-in icons courtesy of [Font Awesome](https://fontawesome.com/).
 
-Check out the demo [here](https://walokra.github.io/vue-awesome/demo/).
+Check out the demo [here](https://walokra.github.io/vue-awesome-v3/demo/).
 
 ## Installation
 
 ### npm
 
 ```bash
-$ npm install vue-awesome
+$ npm install vue-awesome-v3
 ```
 
 ### Manual
